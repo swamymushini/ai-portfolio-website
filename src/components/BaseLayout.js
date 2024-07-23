@@ -13,11 +13,12 @@ export default function BaseLayout() {
 
    const [active, setActive] = useState(location.pathname === '/' ? 'home' : location.pathname.slice(1, location.pathname.length));
    const refHome = useScrollObserver(setActive);
-   const refAbout = useScrollObserver(setActive);
-   const refPortfolio = useScrollObserver(setActive);
+   const refSkills = useScrollObserver(setActive);
+   const refExperience = useScrollObserver(setActive);
+   const refProjects = useScrollObserver(setActive);
+   const refAchievements = useScrollObserver(setActive);
+   const refEducation = useScrollObserver(setActive);
    let [darkMode, setDarkMode] = useState(false);
-
-
 
    function handleToggleDarkMode() {
       let oppositeOfCurrentDarkMode = !darkMode
@@ -44,14 +45,7 @@ export default function BaseLayout() {
                <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} active={active} setActive={setActive} />
             </Grid>
             <Grid item flexGrow={1}>
-               {singlePage ? <SinglePageRoutes refs={{refHome, refAbout, refPortfolio}}/> : <MultiPageRoutes />}
-            </Grid>
-            <Grid item>
-               <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
-                  py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
-                  <p>template created with &hearts; by <a href={'https://paytonpierce.dev'}>Payton Pierce</a></p>
-                  <p>&copy; 2023</p>
-               </Box>
+               {singlePage ? <SinglePageRoutes refs={{ refHome, refSkills, refExperience, refProjects, refAchievements, refEducation }} /> : <MultiPageRoutes />}
             </Grid>
          </Grid>
       </Box>

@@ -1,0 +1,46 @@
+.skill-box {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.skill-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(120, 255, 253, 0.2), rgba(255, 120, 250, 0.2));
+  z-index: -1;
+  transition: width 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.skill-box:hover .skill-fill {
+  animation: pulse 2s infinite;
+}

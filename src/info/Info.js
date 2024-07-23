@@ -5,64 +5,37 @@ import mock3 from "../img/mock3.png"
 import mock4 from "../img/mock4.png"
 import mock5 from "../img/mock5.png"
 
-/* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
-how to make this template work best for you! */
-
 export let colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
-/*
-I highly recommend using a gradient generator like https://gradientgenerator.paytonpierce.dev/ to generate a pair of colors that you like.
-These colors will be used to style your name on the homepage, the background of your picture, and some other accents throughout
-the site.
- */
 
-/* 
-This variable will change the layout of the website from multipage to single, scrollable page
-*/
-export let singlePage = false;
-
-/*
-So let's get started! Some of the info below is pretty self-explanatory, like 'firstName' and 'bio'. I'll try to explain anything
-that might not be obvious right off the bat :) I recommend looking at the template example live using "npm start" to get an idea
-of what each of the values mean.
- */
+export let singlePage = true;
 
 export const info = {
-    firstName: "John",
-    lastName: "Smith",
-    initials: "js", // the example uses first and last, but feel free to use three or more if you like.
+    firstName: "Gopala",
+    lastName: "Swamy Mushini",
+    initials: "GS",
     position: "a Full Stack Developer",
-    selfPortrait: self, // don't change this unless you want to name your self-portrait in the "img" folder something else!
-    gradient: `-webkit-linear-gradient(135deg, ${colors})`, // don't change this either
+    selfPortrait: self,
+    gradient: `-webkit-linear-gradient(135deg, ${colors})`,
     baseColor: colors[0],
-    miniBio: [ // these are just some "tidbits" about yourself. You can look at mine https://paytonjewell.github.io/#/ for an example if you'd like
+    miniBio: [
         {
-            emoji: '☕',
-            text: 'fueled by coffee'
+            emoji: '🤖',
+            text: 'Fueled by tech'
         },
         {
-            emoji: '🌎',
-            text: 'based in the US'
+            emoji: '☎',
+            text: '+91 955 330 7417'
         },
         {
             emoji: "💼",
-            text: "Systems Engineer at Google"
+            text: "Software Engineer 3 at Rocket Software"
         },
         {
             emoji: "📧",
-            text: "johnsmith@gmail.com"
+            text: "swamymushini@gmail.com"
         }
     ],
     socials: [
-        {
-            link: "https://facebook.com",
-            icon: 'fa fa-facebook',
-            label: 'facebook'
-        },
-        {
-            link: "https://instagram.com",
-            icon: 'fa fa-instagram',
-            label: 'instagram'
-        },
         {
             link: "https://github.com",
             icon: "fa fa-github",
@@ -72,23 +45,30 @@ export const info = {
             link: "https://linkedin.com",
             icon: "fa fa-linkedin",
             label: 'linkedin'
-        },
-        {
-            link: "https://twitter.com",
-            icon: "fa fa-twitter",
-            label: 'twitter'
         }
-// Feel free to remove any of these that you don't have. I'll write an FAQ on how to add new ones later, let me know if you have a request for an icon!
-// Just change the links so that they lead to your social profiles.
-
     ],
-    bio: "Hello! I'm John. I'm a systems engineer for Google. I studied CompSci at Harvard, I enjoy long walks on the beach, and I believe artificial intelligence will inevitably rule us all one day. You should hire me!",
-    skills:
-        {
-            proficientWith: ['javascript', 'react', 'git', 'github', 'bootstrap', 'html5', 'css3', 'figma'],
-            exposedTo: ['nodejs', 'python', 'adobe illustrator']
-        }
-    ,
+    bio: "Hello! I'm Gopala Swamy Mushini. I'm a Software Engineer 3 at Rocket Software. I'm passionate about full-stack development and constantly improving my skills. I believe in creating efficient and user-friendly software solutions.",
+    skills: [
+        { "label": "Java", "rating": "4" },
+        { "label": "Python", "rating": "4" },
+        { "label": "JavaScript", "rating": "4" },
+        { "label": "Spring Boot", "rating": "4" },
+        { "label": "REST API", "rating": "4" },
+        { "label": "ReactJS", "rating": "4" },
+        { "label": "NodeJS", "rating": "4" },
+        { "label": "Kafka", "rating": "4" },
+        { "label": "PostgreSQL", "rating": "4" },
+        { "label": "MySQL", "rating": "4" },
+        { "label": "MongoDB", "rating": "4" },
+        { "label": "AWS", "rating": "4" },
+        { "label": "Git", "rating": "4" },
+        { "label": "JIRA", "rating": "4" },
+        { "label": "Kubernetes", "rating": "4" },
+        { "label": "Postman", "rating": "4" },
+        { "label": "Jenkins", "rating": "4" },
+        { "label": "Docker", "rating": "4" },
+        { "label": "DSA", "rating": "4" }
+    ],
     hobbies: [
         {
             label: 'reading',
@@ -106,14 +86,12 @@ export const info = {
             label: 'cooking',
             emoji: '🌶'
         }
-// Same as above, change the emojis to match / relate to your hobbies or interests.
-// You can also remove the emojis if you'd like, I just think they look cute :P
     ],
-    portfolio: [ // This is where your portfolio projects will be detailed
+    portfolio: [
         {
             title: "Project 1",
-            live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
-            source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
+            live: "https://paytonpierce.dev",
+            source: "https://github.com/paytonjewell",
             image: mock1
         },
         {
@@ -140,5 +118,85 @@ export const info = {
             source: "https://github.com/paytonjewell",
             image: mock5
         }
-    ]
-}
+    ],
+    experience: [
+        {
+            company: "Rocket Software",
+            location: "Pune, India",
+            position: "Senior Software Engineer",
+            duration: "Feb 2022 - Present",
+            responsibilities: [
+                "Implemented an automated Billing System that replaced manual work, saving time and reducing billing errors by 95%.",
+                "Empowered customers with real-time billing usage and cost insights, leading to an 80% increase in customer satisfaction with the billing process.",
+                "Developed a robust login and authentication flow for the application, where user logins with a username and password generate a JWT token.",
+                "Implemented Okta sign-in flow with Single Sign-On (SSO) by leveraging OIDC, simplifying user management and providing a seamless login experience across multiple services."
+            ],
+            technologies: ["Java", "Spring Boot", "ReactJS", "Okta", "JWT", "RESTful APIs"]
+        },
+        {
+            company: "Pennant Technologies",
+            location: "Vizag, India",
+            position: "Software Engineer",
+            duration: "Jun 2019 - Feb 2022",
+            responsibilities: [
+                "Enhanced the EOD process in a fintech product, facilitating the settlement of EMIs, updating loan schedules, sending late payment emails, and adding penalties.",
+                "Optimized the system to run on multiple servers, significantly improving performance by 45%, and leveraging Apache Kafka for inter-server communication.",
+                "This resulted in a notable reduction in the downtime of the loan management system, ensuring smoother end-of-day operations."
+            ],
+            technologies: ["Java", "Spring", "Apache Kafka", "Microservices"]
+        }
+    ],
+    projects: [
+        {
+          title: "Receipt Upload Functionality",
+          description: [
+            "Built functionality to upload and generate up to 10,000 payment receipts instantly",
+            "Simplified process for bulk handling",
+            "Implemented multi-threading, boosting creation speed by 65%",
+            "Scaled capacity to handle 20,000 receipts"
+          ],
+          technologies: ["Java", "Multi-threading"]
+        },
+        {
+          title: "Billing Service",
+          description: [
+            "Implemented an automated Billing System replacing manual work",
+            "Saved time and reduced billing errors by 95%",
+            "Empowered customers with real-time billing usage and cost insights",
+            "Increased customer satisfaction with billing process by 80%"
+          ],
+          technologies: ["Spring Boot", "ReactJS", "RESTful APIs"]
+        },
+        {
+          title: "Ecommerce Integration",
+          description: [
+            "Engineered a cloud-native API platform connecting SaaS product to Shopify",
+            "Automated order processing and fulfillment for seamless customer experience",
+            "Developed adaptable connectors for easy platform expansion",
+            "Enabled provisioning with other e-commerce platforms"
+          ],
+          technologies: ["Cloud-native", "API", "Shopify"]
+        },
+        {
+          title: "Authentication Service",
+          description: [
+            "Developed robust login and authentication flow",
+            "Implemented JWT token generation for user logins",
+            "Utilized JWT token for inter-service communication",
+            "Implemented Okta sign-in flow with Single Sign-On (SSO) using OIDC"
+          ],
+          technologies: ["JWT", "Okta", "OIDC", "SSO"]
+        },
+        {
+          title: "EOD Service Enhancement",
+          description: [
+            "Enhanced EOD process in fintech product",
+            "Facilitated EMI settlements, loan schedule updates, and late payment handling",
+            "Optimized system to run on multiple servers, improving performance by 45%",
+            "Leveraged Apache Kafka for inter-server communication",
+            "Reduced downtime of loan management system"
+          ],
+          technologies: ["Java", "Spring", "Apache Kafka", "Microservices"]
+        }
+      ]
+};

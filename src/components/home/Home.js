@@ -1,11 +1,12 @@
 import React from 'react';
 import Style from './Home.module.scss';
-import me from '../../img/self.png';
+import me from '../../img/IMG_2567124.jpg';
 import classNames from 'classnames';
 import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
 import {Box} from "@mui/material";
 import {info} from "../../info/Info";
+import { ReactTyped } from 'react-typed';
 
 export default function Home({innerRef}) {
 
@@ -18,13 +19,21 @@ export default function Home({innerRef}) {
          <Box>
             <h1>Hi, I'm <span style={{background: info.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{info.firstName}</span><span className={Style.hand}>🤚</span>
             </h1>
-            <h2>I'm {info.position}.</h2>
+            <h2>I'm 
+               {' '}
+               <ReactTyped
+                  strings={["Backend Developer", "AI Enthusiast", "Senior Software Engineer"]}
+                  loop
+                  typeSpeed={65}
+                  backSpeed={65}
+               />
+               .</h2>
             <Box component={'ul'} p={'0.8rem'}>
                {info.miniBio.map((bio, index) => (
                   <EmojiBullet key={index} emoji={bio.emoji} text={bio.text}/>
                ))}
             </Box>
-            <Box display={'flex'} gap={'1.5rem'} justifyContent={'center'} fontSize={{xs: '2rem', md: '2.5rem'}}>
+            <Box display={'flex'} gap={'1.5rem'} justifyContent={'left'} fontSize={{xs: '2rem', md: '2.5rem'}}>
                {info.socials.map((social, index) => (
                   <SocialIcon key={index} link={social.link} icon={social.icon} label={social.label} />
                ))}
