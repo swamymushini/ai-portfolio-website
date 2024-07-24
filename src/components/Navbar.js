@@ -55,7 +55,7 @@ const scrollWidthOffset = (el) => {
 }
 
 
-export default function Navbar({ darkMode, handleClick, active, setActive }) {
+export default function Navbar({ active, setActive }) {
 
     return (
         <Box component={'nav'} width={'100%'} position={singlePage ? 'fixed' : 'relative'} className={Style.dark}>

@@ -20,29 +20,12 @@ export default function BaseLayout() {
    const refEducation = useScrollObserver(setActive);
    let [darkMode, setDarkMode] = useState(false);
 
-   function handleToggleDarkMode() {
-      let oppositeOfCurrentDarkMode = !darkMode
-      console.log(oppositeOfCurrentDarkMode)
-      localStorage.setItem('darkMode', `${oppositeOfCurrentDarkMode}`)
-      setDarkMode(oppositeOfCurrentDarkMode)
-   }
-
-   useEffect(() => {
-      let detectedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
-
-      if (detectedDarkMode) {
-         setDarkMode(detectedDarkMode)
-      } else {
-         localStorage.setItem('darkMode', 'false')
-      }
-   }, [])
-
    return (
-      <Box className={darkMode ? Style.dark : Style.light}>
+      <Box className={Style.dark}>
          <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
             justifyContent={'space-between'}>
             <Grid item>
-               <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} active={active} setActive={setActive} />
+               <Navbar active={active} setActive={setActive} />
             </Grid>
             <Grid item flexGrow={1}>
                {singlePage ? <SinglePageRoutes refs={{ refHome, refSkills, refExperience, refProjects, refAchievements, refEducation }} /> : <MultiPageRoutes />}
