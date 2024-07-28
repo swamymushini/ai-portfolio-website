@@ -7,6 +7,7 @@ import MultiPageRoutes from './MultiPageRoutes';
 import { singlePage } from '../info/Info';
 import SinglePageRoutes from './SinglePageRoutes';
 import useScrollObserver from '../hooks/useScrollObserver';
+import ChatBot from './ChatBot'; // Import the new ChatBot component
 
 export default function BaseLayout() {
    const location = useLocation()
@@ -18,7 +19,6 @@ export default function BaseLayout() {
    const refProjects = useScrollObserver(setActive);
    const refAchievements = useScrollObserver(setActive);
    const refEducation = useScrollObserver(setActive);
-   let [darkMode, setDarkMode] = useState(false);
 
    return (
       <Box className={Style.dark}>
@@ -31,7 +31,7 @@ export default function BaseLayout() {
                {singlePage ? <SinglePageRoutes refs={{ refHome, refSkills, refExperience, refProjects, refAchievements, refEducation }} /> : <MultiPageRoutes />}
             </Grid>
          </Grid>
+         <ChatBot /> {/* Add the ChatBot component here */}
       </Box>
    )
 }
-

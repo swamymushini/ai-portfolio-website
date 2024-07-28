@@ -11,11 +11,17 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.8rem;
+    margin: 0.5rem;
   }
 }
 

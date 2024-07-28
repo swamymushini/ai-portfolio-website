@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Typography, Paper, useTheme } from '@mui/material';
-import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
+import { Box, Typography, Grid } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
@@ -25,11 +24,9 @@ const achievements = [
 ];
 
 const Achievements = ({ innerRef }) => {
-    const theme = useTheme();
-
     return (
         <Box
-            id = {'achievements'}
+            id="achievements"
             ref={innerRef}
             sx={{
                 minHeight: '100vh',
@@ -38,7 +35,7 @@ const Achievements = ({ innerRef }) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 background: 'transparent',
-                padding: theme.spacing(3),
+                padding: 3,
             }}
         >
             <motion.div
@@ -46,62 +43,36 @@ const Achievements = ({ innerRef }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <Typography variant="h2" component="h2" gutterBottom align="center" sx={{ color: 'white', mb: 4 }}>
+                <Typography variant="h2" component="h2" gutterBottom align="center" sx={{ color: 'white', mb: 6 }}>
                     Achievements
                 </Typography>
             </motion.div>
-            <Box
-                sx={{
-                    maxWidth: '1000px',
-                    width: '100%',
-                }}
-            >
-                <Timeline position="right">
-                    {achievements.map((achievement, index) => (
-                        <TimelineItem key={index}>
-                            <TimelineSeparator>
+            <Box sx={{ maxWidth: '800px', width: '100%' }}>
+                {achievements.map((achievement, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: index * 0.2 }}
+                    >
+                        <Grid container spacing={3} sx={{ mb: 4 }} alignItems="center">
+                            <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'center' }}>
                                 <motion.div
-                                    whileHover={{ scale: 1.2 }}
-                                    whileTap={{ scale: 0.9 }}
+                                    whileHover={{ scale: 1.2, rotate: 360 }}
+                                    transition={{ duration: 0.5 }}
                                 >
-                                    <TimelineDot sx={{ bgcolor: 'primary.main' }}>
-                                        {achievement.icon}
-                                    </TimelineDot>
+                                    {React.cloneElement(achievement.icon, { sx: { fontSize: 40, color: 'primary.main' } })}
                                 </motion.div>
-                                {index !== achievements.length - 1 && <TimelineConnector sx={{ bgcolor: 'rgba(255, 255, 255, 0.3)' }} />}
-                            </TimelineSeparator>
-                            <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                <motion.div
-                                    initial={{ opacity: 0, x: 50 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.5, delay: index * 0.2 }}
-                                >
-                                    <Paper
-                                        elevation={3}
-                                        sx={{
-                                            padding: '20px',
-                                            background: 'rgba(255, 255, 255, 0.05)',
-                                            backdropFilter: 'blur(10px)',
-                                            borderRadius: '10px',
-                                            border: '1px solid rgba(255, 255, 255, 0.2)',
-                                            '&:hover': {
-                                                transform: 'translateY(-5px)',
-                                                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
-                                                transition: 'all 0.3s ease-in-out',
-                                            },
-                                            width: '100%',
-                                        }}
-                                    >
-                                        <Typography variant="h6" component="h3" sx={{ color: 'primary.main', mb: 1 }}>
-                                            {achievement.title}
-                                        </Typography>
-                                        <Typography sx={{ color: 'white' }}>{achievement.description}</Typography>
-                                    </Paper>
-                                </motion.div>
-                            </TimelineContent>
-                        </TimelineItem>
-                    ))}
-                </Timeline>
+                            </Grid>
+                            <Grid item xs={10}>
+                                <Typography variant="h5" component="h3" sx={{ color: 'primary.main', mb: 1 }}>
+                                    {achievement.title}
+                                </Typography>
+                                <Typography sx={{ color: 'white' }}>{achievement.description}</Typography>
+                            </Grid>
+                        </Grid>
+                    </motion.div>
+                ))}
             </Box>
         </Box>
     );

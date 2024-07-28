@@ -1,9 +1,4 @@
 import self from "../img/self.png"
-import mock1 from "../img/mock1.png"
-import mock2 from "../img/mock2.png"
-import mock3 from "../img/mock3.png"
-import mock4 from "../img/mock4.png"
-import mock5 from "../img/mock5.png"
 
 export let colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 
@@ -48,27 +43,37 @@ export const info = {
         }
     ],
     bio: "Hello! I'm Gopala Swamy Mushini. I'm a Software Engineer 3 at Rocket Software. I'm passionate about full-stack development and constantly improving my skills. I believe in creating efficient and user-friendly software solutions.",
-    skills: [
-        { "label": "Java", "rating": "4" },
-        { "label": "Python", "rating": "4" },
-        { "label": "JavaScript", "rating": "4" },
-        { "label": "Spring Boot", "rating": "4" },
-        { "label": "REST API", "rating": "4" },
-        { "label": "ReactJS", "rating": "4" },
-        { "label": "NodeJS", "rating": "4" },
-        { "label": "Kafka", "rating": "4" },
-        { "label": "PostgreSQL", "rating": "4" },
-        { "label": "MySQL", "rating": "4" },
-        { "label": "MongoDB", "rating": "4" },
-        { "label": "AWS", "rating": "4" },
-        { "label": "Git", "rating": "4" },
-        { "label": "JIRA", "rating": "4" },
-        { "label": "Kubernetes", "rating": "4" },
-        { "label": "Postman", "rating": "4" },
-        { "label": "Jenkins", "rating": "4" },
-        { "label": "Docker", "rating": "4" },
-        { "label": "DSA", "rating": "4" }
-    ],
+    skills: {
+        "Programming Languages": [
+            { "label": "Java", "rating": "4" },
+            { "label": "Python", "rating": "4" },
+            { "label": "JavaScript", "rating": "4" }
+        ],
+        "Frameworks & Libraries": [
+            { "label": "Spring Boot", "rating": "4" },
+            { "label": "ReactJS", "rating": "4" },
+            { "label": "NodeJS", "rating": "4" },
+            { "label": "Kafka", "rating": "4" }
+        ],
+        "Database": [
+            { "label": "PostgreSQL", "rating": "4" },
+            { "label": "MySQL", "rating": "4" },
+            { "label": "MongoDB", "rating": "4" }
+        ],
+        "Cloud": [
+            { "label": "AWS", "rating": "4" }
+        ],
+        "Others": [
+            { "label": "Git", "rating": "4" },
+            { "label": "JIRA", "rating": "4" },
+            { "label": "Kubernetes", "rating": "4" },
+            { "label": "Postman", "rating": "4" },
+            { "label": "Jenkins", "rating": "4" },
+            { "label": "Docker", "rating": "4" },
+            { "label": "DSA", "rating": "4" }
+        ]
+    }
+    ,
     hobbies: [
         {
             label: 'reading',
@@ -88,36 +93,7 @@ export const info = {
         }
     ],
     portfolio: [
-        {
-            title: "Project 1",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock1
-        },
-        {
-            title: "Project 2",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock2
-        },
-        {
-            title: "Project 3",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock3
-        },
-        {
-            title: "Project 4",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock4
-        },
-        {
-            title: "Project 5",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock5
-        }
+        
     ],
     experience: [
         {
@@ -148,55 +124,55 @@ export const info = {
     ],
     projects: [
         {
-          title: "Receipt Upload Functionality",
-          description: [
-            "Built functionality to upload and generate up to 10,000 payment receipts instantly",
-            "Simplified process for bulk handling",
-            "Implemented multi-threading, boosting creation speed by 65%",
-            "Scaled capacity to handle 20,000 receipts"
-          ],
-          technologies: ["Java", "Multi-threading"]
+            title: "Receipt Upload Functionality",
+            description: [
+                "Built functionality to upload and generate up to 10,000 payment receipts instantly",
+                "Simplified process for bulk handling",
+                "Implemented multi-threading, boosting creation speed by 65%",
+                "Scaled capacity to handle 20,000 receipts"
+            ],
+            technologies: ["Java", "Multi-threading"]
         },
         {
-          title: "Billing Service",
-          description: [
-            "Implemented an automated Billing System replacing manual work",
-            "Saved time and reduced billing errors by 95%",
-            "Empowered customers with real-time billing usage and cost insights",
-            "Increased customer satisfaction with billing process by 80%"
-          ],
-          technologies: ["Spring Boot", "ReactJS", "RESTful APIs"]
+            title: "Billing Service",
+            description: [
+                "Implemented an automated Billing System replacing manual work",
+                "Saved time and reduced billing errors by 95%",
+                "Empowered customers with real-time billing usage and cost insights",
+                "Increased customer satisfaction with billing process by 80%"
+            ],
+            technologies: ["Spring Boot", "ReactJS", "RESTful APIs"]
         },
         {
-          title: "Ecommerce Integration",
-          description: [
-            "Engineered a cloud-native API platform connecting SaaS product to Shopify",
-            "Automated order processing and fulfillment for seamless customer experience",
-            "Developed adaptable connectors for easy platform expansion",
-            "Enabled provisioning with other e-commerce platforms"
-          ],
-          technologies: ["Cloud-native", "API", "Shopify"]
+            title: "Ecommerce Integration",
+            description: [
+                "Engineered a cloud-native API platform connecting SaaS product to Shopify",
+                "Automated order processing and fulfillment for seamless customer experience",
+                "Developed adaptable connectors for easy platform expansion",
+                "Enabled provisioning with other e-commerce platforms"
+            ],
+            technologies: ["Cloud-native", "API", "Shopify"]
         },
         {
-          title: "Authentication Service",
-          description: [
-            "Developed robust login and authentication flow",
-            "Implemented JWT token generation for user logins",
-            "Utilized JWT token for inter-service communication",
-            "Implemented Okta sign-in flow with Single Sign-On (SSO) using OIDC"
-          ],
-          technologies: ["JWT", "Okta", "OIDC", "SSO"]
+            title: "Authentication Service",
+            description: [
+                "Developed robust login and authentication flow",
+                "Implemented JWT token generation for user logins",
+                "Utilized JWT token for inter-service communication",
+                "Implemented Okta sign-in flow with Single Sign-On (SSO) using OIDC"
+            ],
+            technologies: ["JWT", "Okta", "OIDC", "SSO"]
         },
         {
-          title: "EOD Service Enhancement",
-          description: [
-            "Enhanced EOD process in fintech product",
-            "Facilitated EMI settlements, loan schedule updates, and late payment handling",
-            "Optimized system to run on multiple servers, improving performance by 45%",
-            "Leveraged Apache Kafka for inter-server communication",
-            "Reduced downtime of loan management system"
-          ],
-          technologies: ["Java", "Spring", "Apache Kafka", "Microservices"]
+            title: "EOD Service Enhancement",
+            description: [
+                "Enhanced EOD process in fintech product",
+                "Facilitated EMI settlements, loan schedule updates, and late payment handling",
+                "Optimized system to run on multiple servers, improving performance by 45%",
+                "Leveraged Apache Kafka for inter-server communication",
+                "Reduced downtime of loan management system"
+            ],
+            technologies: ["Java", "Spring", "Apache Kafka", "Microservices"]
         }
-      ]
+    ]
 };
