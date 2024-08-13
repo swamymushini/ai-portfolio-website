@@ -1,4 +1,3 @@
-import self from "../img/self.png"
 
 export let colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 
@@ -9,7 +8,6 @@ export const info = {
     lastName: "Swamy Mushini",
     initials: "GS",
     position: "a Full Stack Developer",
-    selfPortrait: self,
     gradient: `-webkit-linear-gradient(135deg, ${colors})`,
     baseColor: colors[0],
     miniBio: [
