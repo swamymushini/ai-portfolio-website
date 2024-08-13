@@ -19,6 +19,7 @@ export default function BaseLayout() {
    const refProjects = useScrollObserver(setActive);
    const refAchievements = useScrollObserver(setActive);
    const refEducation = useScrollObserver(setActive);
+   const refResume = useScrollObserver(setActive);
 
    return (
       <Box className={Style.dark}>
@@ -28,7 +29,7 @@ export default function BaseLayout() {
                <Navbar active={active} setActive={setActive} />
             </Grid>
             <Grid item flexGrow={1}>
-               {singlePage ? <SinglePageRoutes refs={{ refHome, refSkills, refExperience, refProjects, refAchievements, refEducation }} /> : <MultiPageRoutes />}
+               {singlePage ? <SinglePageRoutes refs={{ refHome, refSkills, refExperience, refProjects, refAchievements, refEducation, refResume }} /> : <MultiPageRoutes />}
             </Grid>
          </Grid>
          <ChatBot /> {/* Add the ChatBot component here */}

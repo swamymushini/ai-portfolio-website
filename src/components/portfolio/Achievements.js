@@ -4,7 +4,7 @@ import CodeIcon from '@mui/icons-material/Code';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import { motion } from 'framer-motion';
-
+import { info } from '../../info/Info';
 const achievements = [
     {
         icon: <CodeIcon />,
@@ -43,11 +43,19 @@ const Achievements = ({ innerRef }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <Typography variant="h2" component="h2" gutterBottom align="center" sx={{ color: 'white', mb: 6 }}>
+                <Typography variant="h2" component="h2" gutterBottom align="center" sx={{
+          mb: 5,
+          background: info.gradient,
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          textAlign: 'center',
+          textTransform: 'uppercase',
+          fontWeight: 'bold'
+        }}>
                     Achievements
                 </Typography>
             </motion.div>
-            <Box sx={{ maxWidth: '800px', width: '100%' }}>
+            <Box sx={{ maxWidth: '800px', width: '100%' }} >
                 {achievements.map((achievement, index) => (
                     <motion.div
                         key={index}
@@ -61,14 +69,14 @@ const Achievements = ({ innerRef }) => {
                                     whileHover={{ scale: 1.2, rotate: 360 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    {React.cloneElement(achievement.icon, { sx: { fontSize: 40, color: 'primary.main' } })}
+                                    {React.cloneElement(achievement.icon, { sx: { fontSize: 40, color: '#50C878' } })}
                                 </motion.div>
                             </Grid>
                             <Grid item xs={10}>
-                                <Typography variant="h5" component="h3" sx={{ color: 'primary.main', mb: 1 }}>
+                                <Typography variant="h5" component="h3" sx={{ color: 'primary.main', mb: 1, fontSize: '2rem' }}>
                                     {achievement.title}
                                 </Typography>
-                                <Typography sx={{ color: 'white' }}>{achievement.description}</Typography>
+                                <Typography sx={{ color: 'white', fontSize: '1.6rem' }}>{achievement.description}</Typography>
                             </Grid>
                         </Grid>
                     </motion.div>

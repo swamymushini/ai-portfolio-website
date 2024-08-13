@@ -146,17 +146,17 @@ const Experience = ({ innerRef }) => {
                 }}
               >
                 <CardContent sx={{ color: 'white' }}>
-                  <Typography variant="h6" component="div" fontWeight="bold" mb={1}>
+                  <Typography variant="h6" component="div" fontWeight="bold" mb={1} fontSize="1.5rem">
                     {exp.company}
                   </Typography>
-                  <Typography sx={{ mb: 1, fontSize: '1.1rem', color: 'rgb(166,104,255)' }}>
+                  <Typography sx={{ mb: 1, fontSize: '1.5rem', color: 'rgb(166,104,255)'}} >
                     {exp.position}
                   </Typography>
-                  <Typography variant="body2" mb={2} sx={{ fontSize: '0.9rem', opacity: 0.8 }}>
+                  <Typography variant="body2" mb={2} sx={{ fontSize: '1.2rem', opacity: 0.8 }} >
                     {exp.location}
                   </Typography>
                   {exp.responsibilities.map((resp, idx) => (
-                    <Typography key={idx} variant="body2" mb={1} sx={{ display: 'flex', fontSize: '0.9rem' }}>
+                    <Typography key={idx} variant="body2" mb={1} sx={{ display: 'flex', fontSize: '1.1rem' }}>
                       <span style={{ marginRight: '8px', color: 'rgb(166,104,255)' }}>•</span> {resp}
                     </Typography>
                   ))}

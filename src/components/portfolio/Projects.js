@@ -70,16 +70,15 @@ const Projects = ({ innerRef }) => {
                                 >
                                     <CardContent sx={{ flexGrow: 1, color: 'white', display: 'flex', flexDirection: 'column' }}>
                                         <Typography
-                                            variant="h5"
+                                            variant="h4"
                                             component="div"
                                             gutterBottom
-                                            fontWeight="bold"
                                             mb={2}
                                             sx={{
-                                                fontSize: '1.5rem',
-                                                color: theme.palette.primary.main,
+                                                fontSize: '1.6rem',
+                                                color: '#fec846',
                                                 borderBottom: `2px solid ${theme.palette.primary.main}`,
-                                                paddingBottom: 1
+                                                padding: 1.4
                                             }}
                                         >
                                             {project.title}
@@ -93,8 +92,8 @@ const Projects = ({ innerRef }) => {
                                                     transition={{ delay: idx * 0.1 }}
                                                 >
                                                     <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
-                                                        <Typography variant="body2" component="span" sx={{ mr: 1, fontSize: '1.1rem', color: theme.palette.secondary.main }}>•</Typography>
-                                                        <Typography variant="body2" sx={{ fontSize: '1rem' }}>{point}</Typography>
+                                                        <Typography variant="body2" component="span" sx={{ mr: 1, fontSize: '1.5rem', color: theme.palette.secondary.main }}>•</Typography>
+                                                        <Typography variant="body2" sx={{ fontSize: '1.2rem' }}>{point}</Typography>
                                                     </Box>
                                                 </motion.div>
                                             ))}
@@ -110,7 +109,7 @@ const Projects = ({ innerRef }) => {
                                                         label={tech}
                                                         size="small"
                                                         sx={{
-                                                            fontSize: '0.8rem',
+                                                            fontSize: '1rem',
                                                             backgroundColor: theme.palette.primary.main,
                                                             color: 'white',
                                                             '&:hover': {

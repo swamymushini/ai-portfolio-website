@@ -5,6 +5,8 @@ import Experience from "./portfolio/Experience";
 import Projects from "./portfolio/Projects";
 import Achievements from "./portfolio/Achievements";
 import Education from "./portfolio/Education";
+import Resume from "./portfolio/Resume";
+
 import { Box } from "@mui/material";
 
 export default function SinglePageRoutes({ refs }) {
@@ -16,6 +18,7 @@ export default function SinglePageRoutes({ refs }) {
             <Projects innerRef={refs.refProjects} />
             <Achievements innerRef={refs.refAchievements} />
             <Education innerRef={refs.refEducation} />
+            <Resume innerRef={refs.refResume} />
         </Box>
     );
 }

@@ -66,10 +66,10 @@ const Skills = ({ innerRef }) => {
         </Grid>
         <Grid item xs={12} md={8}>
           {Object.entries(info.skills).map(([category, skills], categoryIndex) => (
-            <Box key={categoryIndex} mb={4}>
+            <Box key={categoryIndex} mb={4} >
               <Typography variant="h6" component="div" mb={2} sx={{
-                color: 'white', fontWeight: 'bold', mb: { xs: 2, md: 2 },
-                mx: { xs: 2, md: 2 },
+                color: 'white',  mb: { xs: 2, md: 2 },
+                mx: { xs: 2, md: 2 } , fontSize : '1.9rem'
               }}>
                 {category}
               </Typography>
@@ -90,15 +90,14 @@ const Skills = ({ innerRef }) => {
                         className="skill-box"
                         component={'span'}
                         sx={{
-                          // Add padding and margin for mobile responsiveness
                           mb: { xs: 1, md: 0 },
                           mx: { xs: 1, md: 0 },
-                        }}
+                          fontSize : '1.2rem'                        }}
                       >
                         <motion.div
                           className="skill-fill"
                           initial={{ width: 0 }}
-                          animate={{ width: `${(skill.rating / 5) * 100}%` }}
+                          animate={{ width: `${(skill.rating / 10) * 100}%` }}
                           transition={{ duration: 1, delay: skillIndex * 0.1 }}
                         />
                         {skill.label}

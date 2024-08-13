@@ -43,6 +43,11 @@ const links = [
         type: 'initials',
         to: '',
         active: 'home'
+    },
+    {
+        name: 'Resume',
+        to: 'resume',
+        active: 'resume'
     }
 ]
 

@@ -6,6 +6,7 @@ import Achievements from "./portfolio/Achievements";
 import Education from "./portfolio/Education";
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Resume from "./portfolio/Resume";
 
 export default function MultiPageRoutes() {
     return (
@@ -16,6 +17,7 @@ export default function MultiPageRoutes() {
             <Route exact path={'/projects'} element={<Projects />} />
             <Route exact path={'/achievements'} element={<Achievements />} />
             <Route exact path={'/education'} element={<Education />} />
+            <Route exact path={'/resume'} element={<Resume />} />
         </Routes>
     )
 }

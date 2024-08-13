@@ -32,12 +32,12 @@ export const info = {
     ],
     socials: [
         {
-            link: "https://github.com",
+            link: "https://github.com/swamymushini",
             icon: "fa fa-github",
             label: 'github'
         },
         {
-            link: "https://linkedin.com",
+            link: "https://www.linkedin.com/in/gopal-swamy-mushini-a6b02b119/",
             icon: "fa fa-linkedin",
             label: 'linkedin'
         }
@@ -45,32 +45,32 @@ export const info = {
     bio: "Hello! I'm Gopala Swamy Mushini. I'm a Software Engineer 3 at Rocket Software. I'm passionate about full-stack development and constantly improving my skills. I believe in creating efficient and user-friendly software solutions.",
     skills: {
         "Programming Languages": [
-            { "label": "Java", "rating": "4" },
-            { "label": "Python", "rating": "4" },
-            { "label": "JavaScript", "rating": "4" }
+            { "label": "Java", "rating": "8" },
+            { "label": "Python", "rating": "2" },
+            { "label": "JavaScript", "rating": "6" }
         ],
         "Frameworks & Libraries": [
-            { "label": "Spring Boot", "rating": "4" },
+            { "label": "Spring Boot", "rating": "7" },
             { "label": "ReactJS", "rating": "4" },
             { "label": "NodeJS", "rating": "4" },
-            { "label": "Kafka", "rating": "4" }
+            { "label": "Kafka", "rating": "7" }
         ],
         "Database": [
-            { "label": "PostgreSQL", "rating": "4" },
-            { "label": "MySQL", "rating": "4" },
-            { "label": "MongoDB", "rating": "4" }
+            { "label": "PostgreSQL", "rating": "7" },
+            { "label": "MySQL", "rating": "7" },
+            { "label": "MongoDB", "rating": "7" }
         ],
         "Cloud": [
-            { "label": "AWS", "rating": "4" }
+            { "label": "AWS", "rating": "6" }
         ],
         "Others": [
-            { "label": "Git", "rating": "4" },
-            { "label": "JIRA", "rating": "4" },
-            { "label": "Kubernetes", "rating": "4" },
-            { "label": "Postman", "rating": "4" },
-            { "label": "Jenkins", "rating": "4" },
-            { "label": "Docker", "rating": "4" },
-            { "label": "DSA", "rating": "4" }
+            { "label": "Git", "rating": "7" },
+            { "label": "JIRA", "rating": "7" },
+            { "label": "Kubernetes", "rating": "2" },
+            { "label": "Jenkins", "rating": "6" },
+            { "label": "Docker", "rating": "6" },
+            { "label": "DSA", "rating": "7" },
+            { "label": "Ollama", "rating": "5" },
         ]
     }
     ,
