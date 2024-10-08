@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.module.scss';
 import BaseLayout from "./components/BaseLayout";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 // Component to handle redirection
 const ResumeRedirect = () => {
@@ -13,18 +13,18 @@ const ResumeRedirect = () => {
 }
 
 function App() {
-   return (
-      <div>
-         <BrowserRouter>
-            <Routes>
-               {/* Route for redirecting /resume */}
-               <Route path="/resume" element={<ResumeRedirect />} />
-               {/* BaseLayout to handle all other routes */}
-               <Route path="/*" element={<BaseLayout />} />
-            </Routes>
-         </BrowserRouter>
-      </div>
-   );
+  return (
+    <div>
+      <HashRouter>
+        <Routes>
+          {/* Route for redirecting /resume */}
+          <Route path="/resume" element={<ResumeRedirect />} />
+          {/* BaseLayout to handle all other routes */}
+          <Route path="/*" element={<BaseLayout />} />
+        </Routes>
+      </HashRouter>
+    </div>
+  );
 }
 
 export default App;
