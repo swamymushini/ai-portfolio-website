@@ -3,7 +3,10 @@ import { styled, keyframes } from '@mui/system';
 import CloseIcon from '@mui/icons-material/Close';
 import SendIcon from '@mui/icons-material/Send';
 import ChatIcon from '@mui/icons-material/Chat';
-import me from '../img/avatar.png'; // Import the photo
+import OpenInFullIcon from '@mui/icons-material/OpenInFull';
+import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import me from '../img/avatar.png';
 import { sendMessageToGoogleApi } from './googleApi';
 
 // Colors and gradients
@@ -46,6 +49,18 @@ const typingAnimation = keyframes`
   }
 `;
 
+const bounceAnimation = keyframes`
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+`;
+
 // Styled components
 const ChatButton = styled('button')({
   position: 'fixed',
@@ -70,12 +85,14 @@ const ChatButton = styled('button')({
   },
 });
 
-const ChatContainer = styled('div')({
+const ChatContainer = styled('div')(({ isMaximized }) => ({
   position: 'fixed',
   bottom: '80px',
   right: '20px',
-  width: '350px',
-  height: '500px',
+  width: isMaximized ? '80%' : '350px',
+  height: isMaximized ? '80%' : '500px',
+  maxWidth: '800px',
+  maxHeight: '800px',
   borderRadius: '10px',
   overflow: 'hidden',
   boxShadow: '0 0 10px rgba(0,0,0,0.2)',
@@ -85,7 +102,7 @@ const ChatContainer = styled('div')({
   animation: `${fadeIn} 0.3s ease-out`,
   transition: 'all 0.3s ease',
   zIndex: 9999,
-});
+}));
 
 const ChatHeader = styled('div')({
   background: gradient,
@@ -113,10 +130,18 @@ const ChatBody = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   '&::-webkit-scrollbar': {
-    display: 'none',
+    width: '6px',
   },
-  scrollbarWidth: 'none',
-  '-ms-overflow-style': 'none',
+  '&::-webkit-scrollbar-track': {
+    background: '#1E1E1E',
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: '#888',
+    borderRadius: '3px',
+  },
+  '&::-webkit-scrollbar-thumb:hover': {
+    background: '#555',
+  },
 });
 
 const Message = styled('div')(({ isBot }) => ({
@@ -130,7 +155,28 @@ const Message = styled('div')(({ isBot }) => ({
   color: 'white',
   fontSize: '14px',
   animation: `${fadeIn} 0.3s ease-out`,
+  position: 'relative',
 }));
+
+const CopyButton = styled('button')({
+  position: 'absolute',
+  bottom: '-20px',
+  right: '0',
+  background: 'rgba(255, 255, 255, 0.1)',
+  border: 'none',
+  borderRadius: '50%',
+  width: '30px',
+  height: '30px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  color: 'white',
+  cursor: 'pointer',
+  transition: 'background-color 0.2s',
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+  },
+});
 
 const InputArea = styled('div')({
   display: 'flex',
@@ -166,6 +212,11 @@ const SendButton = styled('button')({
   },
 });
 
+const HeaderButtons = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+});
+
 const HeaderButton = styled('button')({
   background: 'transparent',
   color: 'white',
@@ -175,6 +226,7 @@ const HeaderButton = styled('button')({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  marginLeft: '8px',
   '&:hover': {
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
   },
@@ -202,12 +254,43 @@ const Dot = styled('span')({
   },
 });
 
+const AttentionMessage = styled('div')({
+  position: 'absolute',
+  bottom: '60px',
+  right: '70px',
+  backgroundColor: 'white',
+  color: '#1E1E1E',
+  padding: '10px',
+  borderRadius: '10px',
+  boxShadow: '0 0 10px rgba(0,0,0,0.2)',
+  maxWidth: '250px',
+  animation: `${bounceAnimation} 1s infinite, ${fadeIn} 0.3s ease-out`,
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    bottom: '-10px',
+    right: '20px',
+    border: '10px solid transparent',
+    borderTopColor: 'white',
+  },
+});
+
+const attentionMessages = [
+  "Hey, I'm Gopal! Click to chat with me.",
+  "Got questions? I'm here to help!",
+  "If you are a recruiter and wants to know more about me?. Click me!",
+];
+
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMaximized, setIsMaximized] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [buttonDisabled, setButtonDisabled] = useState(false); // State for button disable
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [attentionMessage, setAttentionMessage] = useState('');
+  const [showAttentionMessage, setShowAttentionMessage] = useState(false);
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
   
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -218,6 +301,20 @@ const ChatBot = () => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      const messageInterval = setInterval(() => {
+        const randomMessage = attentionMessages[Math.floor(Math.random() * attentionMessages.length)];
+        setAttentionMessage(randomMessage);
+        setShowAttentionMessage(true);
+        
+        setTimeout(() => setShowAttentionMessage(false), 5000);
+      }, 15000);
+
+      return () => clearInterval(messageInterval);
+    }
+  }, [isOpen]);
 
   const handleSend = async () => {
     if (input.trim()) {
@@ -244,25 +341,52 @@ const ChatBot = () => {
   
   const toggleChat = () => {
     setIsOpen(!isOpen);
+    setShowAttentionMessage(false);
+  };
+
+  const toggleMaximize = () => {
+    setIsMaximized(!isMaximized);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSend();
+    }
+  };
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      console.log('Text copied to clipboard');
+    });
   };
 
   return (
     <>
-      <ChatButton onClick={() => setIsOpen(!isOpen)}>
-        <ChatIcon fontSize="small" />
-      </ChatButton>
+      <div style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
+        {showAttentionMessage && (
+          <AttentionMessage>{attentionMessage}</AttentionMessage>
+        )}
+        {!isOpen && (
+          <ChatButton onClick={toggleChat}>
+            <ChatIcon fontSize="small" />
+          </ChatButton>
+        )}
+      </div>
       {isOpen && (
-        <ChatContainer>
+        <ChatContainer isMaximized={isMaximized}>
           <ChatHeader>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Avatar src={me} alt="Profile" />
               <div>I'm Gopal</div>
             </div>
-            <div>
+            <HeaderButtons>
+              <HeaderButton onClick={toggleMaximize}>
+                {isMaximized ? <CloseFullscreenIcon fontSize="small" /> : <OpenInFullIcon fontSize="small" />}
+              </HeaderButton>
               <HeaderButton onClick={() => setIsOpen(false)}>
                 <CloseIcon fontSize="small" />
               </HeaderButton>
-            </div>
+            </HeaderButtons>
           </ChatHeader>
           <ChatBody>
             {messages.map((message, index) => (
@@ -274,7 +398,14 @@ const ChatBot = () => {
                     <Dot></Dot>
                   </TypingIndicator>
                 ) : (
-                  message.text
+                  <>
+                    {message.text}
+                    {message.isBot && (
+                      <CopyButton onClick={() => copyToClipboard(message.text)}>
+                        <ContentCopyIcon fontSize="small" />
+                      </CopyButton>
+                    )}
+                  </>
                 )}
               </Message>
             ))}
@@ -282,8 +413,10 @@ const ChatBot = () => {
           </ChatBody>
           <InputArea>
             <Input
+              ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              onKeyPress={handleKeyPress}
               placeholder="Type a message..."
               disabled={buttonDisabled}
             />
