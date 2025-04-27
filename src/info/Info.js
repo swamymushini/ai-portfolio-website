@@ -32,46 +32,53 @@ export const info = {
     ],
     socials: [
         {
-            link: "https://github.com",
+            link: "https://github.com/swamymushini?tab=repositories",
             icon: "fa fa-github",
             label: 'github'
         },
         {
-            link: "https://linkedin.com",
+            link: "https://www.linkedin.com/in/gopal-swamy-sde3/",
             icon: "fa fa-linkedin",
             label: 'linkedin'
         }
     ],
     bio: "Hello! I'm Gopala Swamy Mushini. I'm a Software Engineer 3 at Rocket Software. I'm passionate about full-stack development and constantly improving my skills. I believe in creating efficient and user-friendly software solutions.",
-    skills: {
-        "Programming Languages": [
-            { "label": "Java", "rating": "4" },
-            { "label": "Python", "rating": "4" },
-            { "label": "JavaScript", "rating": "4" }
-        ],
-        "Frameworks & Libraries": [
-            { "label": "Spring Boot", "rating": "4" },
-            { "label": "ReactJS", "rating": "4" },
-            { "label": "NodeJS", "rating": "4" },
-            { "label": "Kafka", "rating": "4" }
-        ],
-        "Database": [
-            { "label": "PostgreSQL", "rating": "4" },
-            { "label": "MySQL", "rating": "4" },
-            { "label": "MongoDB", "rating": "4" }
-        ],
-        "Cloud": [
-            { "label": "AWS", "rating": "4" }
-        ],
-        "Others": [
-            { "label": "Git", "rating": "4" },
-            { "label": "JIRA", "rating": "4" },
-            { "label": "Kubernetes", "rating": "4" },
-            { "label": "Postman", "rating": "4" },
-            { "label": "Jenkins", "rating": "4" },
-            { "label": "Docker", "rating": "4" },
-            { "label": "DSA", "rating": "4" }
-        ]
+        "skills": {
+            "Programming Languages": [
+                { "label": "Java", "rating": "4" },
+                { "label": "Python", "rating": "3" },
+                { "label": "JavaScript", "rating": "3" }
+            ],
+            "Frameworks & Libraries": [
+                { "label": "Spring Boot", "rating": "4" },
+                { "label": "ReactJS", "rating": "3" },
+                { "label": "NodeJS", "rating": "3" },
+                { "label": "Apache Kafka", "rating": "4" },
+                { "label": "LangChain", "rating": "3" }
+            ],
+            "Database": [
+                { "label": "PostgreSQL", "rating": "4" },
+                { "label": "MySQL", "rating": "3" },
+                { "label": "MongoDB", "rating": "4" },
+                { "label": "OracleDB", "rating": "3" },
+                { "label": "Redis", "rating": "3" }
+            ],
+            "Cloud": [
+                { "label": "AWS (EC2, S3, Lambda, EKS, SQS, SNS, CloudWatch)", "rating": "4" }
+            ],
+            "Others": [
+                { "label": "Git", "rating": "4" },
+                { "label": "JIRA", "rating": "4" },
+                { "label": "Postman", "rating": "4" },
+                { "label": "Kubernetes", "rating": "3" },
+                { "label": "Docker", "rating": "4" },
+                { "label": "LLM (Mistral, CodeLlama)", "rating": "3" },
+                { "label": "Ollama", "rating": "3" },
+                { "label": "REST APIs", "rating": "4" },
+                { "label": "DSA", "rating": "4" },
+                { "label": "Microservices Architecture", "rating": "4" },
+                { "label": "Distributed Systems", "rating": "4" }
+            ]
     }
     ,
     hobbies: [
@@ -102,12 +109,16 @@ export const info = {
             position: "Senior Software Engineer",
             duration: "Feb 2022 - Present",
             responsibilities: [
-                "Implemented an automated Billing System that replaced manual work, saving time and reducing billing errors by 95%.",
-                "Empowered customers with real-time billing usage and cost insights, leading to an 80% increase in customer satisfaction with the billing process.",
-                "Developed a robust login and authentication flow for the application, where user logins with a username and password generate a JWT token.",
-                "Implemented Okta sign-in flow with Single Sign-On (SSO) by leveraging OIDC, simplifying user management and providing a seamless login experience across multiple services."
+                "Built a cloud-native API Integration Platform for e-commerce channels like Shopify, enabling seamless order processing and real-time inventory updates.",
+                "Developed an Automated Billing System that reduced manual errors by 95% and increased billing process efficiency by 80%.",
+                "Designed and implemented secure authentication mechanisms using JWT tokens and integrated Okta SSO flows using OIDC for seamless cross-platform login.",
+                "Worked on building AI-driven solutions using LangChain and LLMs (Mistral, CodeLlama) to enhance document querying capabilities in the product.",
+                "Containerized applications using Docker and deployed on AWS EKS clusters with monitoring through AWS CloudWatch."
             ],
-            technologies: ["Java", "Spring Boot", "ReactJS", "Okta", "JWT", "RESTful APIs"]
+            technologies: [
+                "Java", "Spring Boot", "Apache Kafka", "AWS (EC2, S3, Lambda, EKS, SQS, SNS, CloudWatch)", 
+                "ReactJS", "NodeJS", "MongoDB", "PostgreSQL", "Redis", "Docker", "Kubernetes", "JWT", "Okta", "LangChain", "LLMs"
+            ]
         },
         {
             company: "Pennant Technologies",
@@ -115,13 +126,17 @@ export const info = {
             position: "Software Engineer",
             duration: "Jun 2019 - Feb 2022",
             responsibilities: [
-                "Enhanced the EOD process in a fintech product, facilitating the settlement of EMIs, updating loan schedules, sending late payment emails, and adding penalties.",
-                "Optimized the system to run on multiple servers, significantly improving performance by 45%, and leveraging Apache Kafka for inter-server communication.",
-                "This resulted in a notable reduction in the downtime of the loan management system, ensuring smoother end-of-day operations."
+                "Migrated a monolithic EOD loan processing system into a distributed microservices-based architecture, improving system scalability and fault tolerance.",
+                "Optimized EOD processes like EMI settlement, loan schedule updates, and penalty imposition by introducing parallel processing and server clustering using Apache Kafka.",
+                "Built and delivered modules like Bulk Receipt Upload, NPA Management, TDS Processes, and Consumer Durable Loans from scratch.",
+                "Worked closely with business stakeholders to gather requirements and deliver critical fintech modules within aggressive timelines."
             ],
-            technologies: ["Java", "Spring", "Apache Kafka", "Microservices"]
+            technologies: [
+                "Java", "Spring Boot", "Apache Kafka", "Microservices Architecture", "PostgreSQL", "OracleDB"
+            ]
         }
-    ],
+    ]
+    ,
     projects: [
         {
             title: "Receipt Upload Functionality",
@@ -153,6 +168,15 @@ export const info = {
             ],
             technologies: ["Cloud-native", "API", "Shopify"]
         },
+        {
+            title: "AI-driven Document Query System",
+            description: [
+                "Built an AI agent-based system to interpret user queries and generate MongoDB aggregation queries automatically",
+                "Used LangChain framework to chain LLM agents for query extraction, query generation, and summarization tasks",
+                "Integrated open-source LLMs like Mistral and CodeLlama to enable natural language understanding and structured data output",
+            ],
+            technologies: ["LangChain", "LLMs", "Mistral", "CodeLlama", "MongoDB", "Spring Boot", "NodeJS"]
+        },        
         {
             title: "Authentication Service",
             description: [

@@ -391,23 +391,34 @@ const ChatBot = () => {
           <ChatBody>
             {messages.map((message, index) => (
               <Message key={index} isBot={message.isBot}>
-                {message.text === '...' ? (
-                  <TypingIndicator>
-                    <Dot></Dot>
-                    <Dot></Dot>
-                    <Dot></Dot>
-                  </TypingIndicator>
-                ) : (
-                  <>
-                    {message.text}
-                    {message.isBot && (
-                      <CopyButton onClick={() => copyToClipboard(message.text)}>
-                        <ContentCopyIcon fontSize="small" />
-                      </CopyButton>
-                    )}
-                  </>
-                )}
-              </Message>
+ {message.text === '...' ? (
+ <TypingIndicator>
+          <Dot></Dot>
+          <Dot></Dot>
+          <Dot></Dot>
+         </TypingIndicator>
+        ) : (
+         <div>
+          {message.text.split('\n').map((paragraph, paraIndex) => (
+           <p key={paraIndex}>
+            {paragraph.split('**').reduce((parts, part, partIndex) => {
+             if (partIndex % 2 === 1) {
+              parts.push(<strong key={partIndex}>{part}</strong>);
+             } else if (part) {
+              parts.push(part);
+             }
+             return parts;
+            }, [])}
+           </p>
+          ))}
+          {message.isBot && (
+           <CopyButton onClick={() => copyToClipboard(message.text)}>
+            <ContentCopyIcon fontSize="small" />
+           </CopyButton>
+          )}
+         </div>
+        )}
+       </Message>
             ))}
             <div ref={messagesEndRef} />
           </ChatBody>

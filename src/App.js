@@ -18,6 +18,10 @@ const ResumeRedirect = () => {
       '/r252a': 'https://gopala-swamy.netlify.app/Gopala_Swamy___Senior_Software_Engineer-252-a.pdf',
       '/r25z': 'https://gopala-swamy.netlify.app/Gopala_Swamy___Senior_Software_Engineer-25z.pdf',
       '/r25za': 'https://gopala-swamy.netlify.app/Gopala_Swamy___Senior_Software_Engineer-25z-a.pdf',
+      '/leetcode': 'https://leetcode.com/u/Gopal7417/',
+      '/github': 'https://github.com/swamymushini?tab=repositories',
+      '/scaler': 'https://www.scaler.com/academy/profile/c44c523094a9/',
+      '/linkedin': 'https://www.linkedin.com/in/gopal-swamy-sde3/',
     };
 
     const path = location.pathname.toLowerCase();
@@ -47,6 +51,10 @@ function App() {
           <Route path="/r252a" element={<ResumeRedirect />} />
           <Route path="/r25z" element={<ResumeRedirect />} />
           <Route path="/r25za" element={<ResumeRedirect />} />
+          <Route path="/leetcode" element={<ResumeRedirect />} />
+          <Route path="/linkedin" element={<ResumeRedirect />} />
+          <Route path="/github" element={<ResumeRedirect />} />
+          <Route path="/scaler" element={<ResumeRedirect />} />
           
           {/* BaseLayout to handle all other routes */}
           <Route path="/*" element={<BaseLayout />} />
