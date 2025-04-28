@@ -7,7 +7,7 @@ import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import me from '../img/avatar.png';
-import { sendMessageToGoogleApi } from './googleApi';
+import { sendMessageToGoogleApi } from './GApi';
 
 // Colors and gradients
 const colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
@@ -291,7 +291,7 @@ const ChatBot = () => {
   const [showAttentionMessage, setShowAttentionMessage] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
-  
+
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       setMessages([{ text: "Hi, I'm Gopala. How can I assist you today?", isBot: true }]);
@@ -308,7 +308,7 @@ const ChatBot = () => {
         const randomMessage = attentionMessages[Math.floor(Math.random() * attentionMessages.length)];
         setAttentionMessage(randomMessage);
         setShowAttentionMessage(true);
-        
+
         setTimeout(() => setShowAttentionMessage(false), 5000);
       }, 15000);
 
@@ -320,17 +320,23 @@ const ChatBot = () => {
     if (input.trim()) {
       const userMessage = { text: input.trim(), isBot: false };
       setMessages([...messages, userMessage]);
-  
+
       setInput('');
-  
+
       const typingMessage = { text: '...', isBot: true };
       setMessages((prevMessages) => [...prevMessages, typingMessage]);
-  
-      const response = await sendMessageToGoogleApi(input.trim());
-  
+
+      let response = "Sorry, something went wrong. Please try again or email me at swamymushini@gmail.com for any queries";
+      try {
+        response = await sendMessageToGoogleApi(input.trim());
+      } catch (error) {
+        console.log(`Error in fetching model response ${JSON.stringify(error)}`)
+      }
+
       setMessages((prevMessages) => {
         const newMessages = [...prevMessages];
         const typingIndex = newMessages.findIndex((msg) => msg.isBot && msg.text === '...');
+
         if (typingIndex !== -1) {
           newMessages[typingIndex] = { text: response, isBot: true };
         }
@@ -338,7 +344,7 @@ const ChatBot = () => {
       });
     }
   };
-  
+
   const toggleChat = () => {
     setIsOpen(!isOpen);
     setShowAttentionMessage(false);
@@ -391,34 +397,34 @@ const ChatBot = () => {
           <ChatBody>
             {messages.map((message, index) => (
               <Message key={index} isBot={message.isBot}>
- {message.text === '...' ? (
- <TypingIndicator>
-          <Dot></Dot>
-          <Dot></Dot>
-          <Dot></Dot>
-         </TypingIndicator>
-        ) : (
-         <div>
-          {message.text.split('\n').map((paragraph, paraIndex) => (
-           <p key={paraIndex}>
-            {paragraph.split('**').reduce((parts, part, partIndex) => {
-             if (partIndex % 2 === 1) {
-              parts.push(<strong key={partIndex}>{part}</strong>);
-             } else if (part) {
-              parts.push(part);
-             }
-             return parts;
-            }, [])}
-           </p>
-          ))}
-          {message.isBot && (
-           <CopyButton onClick={() => copyToClipboard(message.text)}>
-            <ContentCopyIcon fontSize="small" />
-           </CopyButton>
-          )}
-         </div>
-        )}
-       </Message>
+                {message.text === '...' ? (
+                  <TypingIndicator>
+                    <Dot></Dot>
+                    <Dot></Dot>
+                    <Dot></Dot>
+                  </TypingIndicator>
+                ) : (
+                  <div>
+                    {message.text.split('\n').map((paragraph, paraIndex) => (
+                      <p key={paraIndex}>
+                        {paragraph.split('**').reduce((parts, part, partIndex) => {
+                          if (partIndex % 2 === 1) {
+                            parts.push(<strong key={partIndex}>{part}</strong>);
+                          } else if (part) {
+                            parts.push(part);
+                          }
+                          return parts;
+                        }, [])}
+                      </p>
+                    ))}
+                    {message.isBot && (
+                      <CopyButton onClick={() => copyToClipboard(message.text)}>
+                        <ContentCopyIcon fontSize="small" />
+                      </CopyButton>
+                    )}
+                  </div>
+                )}
+              </Message>
             ))}
             <div ref={messagesEndRef} />
           </ChatBody>

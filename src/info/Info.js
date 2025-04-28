@@ -198,5 +198,22 @@ export const info = {
             ],
             technologies: ["Java", "Spring", "Apache Kafka", "Microservices"]
         }
-    ]
+    ],
+    coverLetter :`Im Gopala Swamy Mushini, a passionate Software Engineer having an experience of 5.9 years in creating applications that are scalable and robust.
+
+In my career so far, I have worked as a Java developer with a product-based company Pennant Technologies that concentrates on building products for the FinTech domain. I have also contributed in some critical developments like migrating the monolithic EOD loan processing system to microservices, optimizing the entire banking operations, building a bulk receipt upload mechanism, and developing other several modules like NPA management, TDS processes, and Consumer Durable Loans.
+
+In view of gaining wider exposure to modern technologies, I moved to Rocket Software. Here, I have used Java, Spring Boot, Apache Kafka, React, Node.js, PostgreSQL, MongoDB, and Redis and AWS EC2, S3, Lambda, EKS, Docker, and Kubernetes extensively. Some of my key contributions include building an Automated Billing System, which reduced errors by 95%, developing a cloud-native API integration platform for e-commerce channels like Shopify, and implementing secure token-based flows for JWT.
+
+
+I am super excited about the opportunity to be a part of your company, where I can bring my energy, enthusiasm, and strong problem-solving attitude to contribute to your innovation journey.
+
+If you would like to know more about my work, you can check out my portfolio at [gopalaswamy.me](http://gopalaswamy.me/). I have even developed a personal bot there that can answer any recruiter queries related to my experience, skills, salary, notice period, and more!
+Email : [swamymushini@gmail.com](mailto:swamymushini@gmail.com)
+Linkedin: https://www.linkedin.com/in/gopal-swamy-sde3/
+Phone : 9553307417
+<p>
+Resume : [gopalaswamy.me/#/resume](http://gopalaswamy.me/#/resume)
+</p>
+`
 };

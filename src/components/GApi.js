@@ -2,20 +2,12 @@ const {
   GoogleGenerativeAI,
 } = require("@google/generative-ai");
 
-
+const {getOrderNumber} = require('./order-generate');
 const { systemPromptText, history } = require('./chathistory');
 
-const handleDecode = (encoded) => {
-  try {
-    const decodedString = atob(encoded);
-    console.log(decodedString);
-    return decodedString;
-  } catch (error) {
-    console.error('Decoding failed:', error);
-  }
-};
+const uniquDigit = Math.floor(Math.random() * 100) + 1;
 
-const genAI = new GoogleGenerativeAI(handleDecode('QUl6YVN5RFMxdEVBakhVaURjTVFsOUtlaThCTmRSUzF5NEl3WGRN'));
+const genAI = new GoogleGenerativeAI(getOrderNumber(uniquDigit));
 
 const model = genAI.getGenerativeModel({
   model: "gemini-2.0-flash",
