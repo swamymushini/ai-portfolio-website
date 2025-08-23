@@ -1,2 +1,3 @@
-# react-portfolio
-My Portfolio website
+gopalaswamy.me
+npm run build
+npm run deploy
