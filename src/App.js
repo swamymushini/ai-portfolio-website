@@ -4,6 +4,7 @@ import './App.module.scss';
 import BaseLayout from "./components/BaseLayout";
 import ScrollProgress from "./components/ScrollProgress";
 import { HashRouter, Route, Routes } from "react-router-dom";
+import FullScreenChat from './components/chat/FullScreenChat';
 
 // Component to handle redirection
 const ResumeRedirect = () => {
@@ -57,6 +58,7 @@ function App() {
           <Route path="/linkedin" element={<ResumeRedirect />} />
           <Route path="/github" element={<ResumeRedirect />} />
           <Route path="/scaler" element={<ResumeRedirect />} />
+          <Route path="/chat" element={<FullScreenChat />} />
           
           {/* BaseLayout to handle all other routes */}
           <Route path="/*" element={<BaseLayout />} />

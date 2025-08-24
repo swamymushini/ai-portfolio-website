@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Divider, Container } from "@mui/material";
+import { Box, Grid, Typography, Chip, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 import { info } from '../../info/Info';
 import './Skills.scss';

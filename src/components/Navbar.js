@@ -194,7 +194,7 @@ export default function Navbar({ active, setActive }) {
                                             <Box
                                                 sx={{
                                                     color: link.active === active ? 'var(--primary-blue)' : 'var(--medium-gray)',
-                                                    fontSize: '0.75rem',
+                                                    fontSize: '1.0rem',
                                                     fontWeight: 400,
                                                     textTransform: 'uppercase',
                                                     letterSpacing: '0.15em',
