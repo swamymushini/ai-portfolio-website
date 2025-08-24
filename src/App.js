@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.module.scss';
 import BaseLayout from "./components/BaseLayout";
+import ScrollProgress from "./components/ScrollProgress";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 // Component to handle redirection
@@ -42,6 +43,7 @@ function App() {
   return (
     <div>
       <HashRouter>
+        <ScrollProgress />
         <Routes>
           {/* Dynamic redirect for all /r* routes */}
           <Route path="/r25" element={<ResumeRedirect />} />

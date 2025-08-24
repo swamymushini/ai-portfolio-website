@@ -7,7 +7,7 @@ import MultiPageRoutes from './MultiPageRoutes';
 import { singlePage } from '../info/Info';
 import SinglePageRoutes from './SinglePageRoutes';
 import useScrollObserver from '../hooks/useScrollObserver';
-import ChatBot from './ChatBot'; // Import the new ChatBot component
+import { motion } from 'framer-motion';
 
 export default function BaseLayout() {
    const location = useLocation()
@@ -22,16 +22,37 @@ export default function BaseLayout() {
 
    return (
       <Box className={Style.dark}>
-         <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
-            justifyContent={'space-between'}>
+         <Grid 
+            container 
+            display={'flex'} 
+            flexDirection={'column'} 
+            minHeight={'100vh'}
+            justifyContent={'space-between'}
+            component={motion.div}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+         >
             <Grid item>
                <Navbar active={active} setActive={setActive} />
             </Grid>
             <Grid item flexGrow={1}>
-               {singlePage ? <SinglePageRoutes refs={{ refHome, refSkills, refExperience, refProjects, refAchievements, refEducation }} /> : <MultiPageRoutes />}
+               {singlePage ? (
+                  <SinglePageRoutes 
+                     refs={{ 
+                        refHome, 
+                        refSkills, 
+                        refExperience, 
+                        refProjects, 
+                        refAchievements, 
+                        refEducation 
+                     }} 
+                  />
+               ) : (
+                  <MultiPageRoutes />
+               )}
             </Grid>
          </Grid>
-         <ChatBot /> {/* Add the ChatBot component here */}
       </Box>
    )
 }

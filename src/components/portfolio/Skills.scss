@@ -1,52 +1,56 @@
 .skill-box {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1);
   position: relative;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 20px;
-  overflow: hidden;
-  display: inline-block;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  background: var(--dark-card);
+  border: 2px solid var(--primary-blue);
+  border-radius: 0;
+  padding: 12px 20px;
+  margin: 4px;
+  color: var(--light-gray);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.15);
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 155, 183, 0.3);
   }
 
-  @media (max-width: 600px) {
-    font-size: 0.875rem;
-    padding: 0.4rem 0.8rem;
-    margin: 0.5rem;
+  .skill-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--primary-blue);
+    opacity: 0.2;
+    transition: width 0.8s ease;
+    z-index: 0;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
   }
 }
 
-.skill-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(120, 255, 253, 0.2), rgba(255, 120, 250, 0.2));
-  z-index: -1;
-  transition: width 1s ease-in-out;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
+// Responsive adjustments
+@media (max-width: 768px) {
+  .skill-box {
+    font-size: 0.8rem;
+    padding: 10px 16px;
+    margin: 3px;
   }
 }
 
-.skill-box:hover .skill-fill {
-  animation: pulse 2s infinite;
+@media (min-width: 1200px) {
+  .skill-box {
+    font-size: 0.9rem;
+    padding: 14px 24px;
+    margin: 5px;
+  }
 }
