@@ -269,6 +269,44 @@ export default function ChatInterface() {
                />
             </IconButton>
          </Box>
+         
+         {/* Full Screen Chat Link */}
+         <Box
+            sx={{
+               display: 'flex',
+               justifyContent: 'end',
+                marginRight: '6rem',
+               mt: 2
+            }}
+         >
+            <Typography
+               sx={{
+                  fontSize: '0.9rem',
+                  color: 'var(--medium-gray)',
+                  fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                  marginTop: '-0.8rem'
+               }}
+            >
+               access the full screen chat{' '}
+               <Typography
+                  component="a"
+                  href="/#/chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                     color: 'var(--primary-blue)',
+                     textDecoration: 'underline',
+                     fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                     transition: 'all 0.2s ease',
+                     '&:hover': {
+                        color: '#FE4A49'
+                     }
+                  }}
+               >
+                  here
+               </Typography>
+            </Typography>
+         </Box>
       </Box>
    );
 }

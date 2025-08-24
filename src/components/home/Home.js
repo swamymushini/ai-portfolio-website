@@ -10,6 +10,32 @@ export default function Home({ innerRef }) {
    const y = useTransform(scrollYProgress, [0, 1], [0, -30]);
    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
+   // Function to parse text and render bold blue text for ** markers
+   const parseTextWithBold = (text) => {
+      const parts = text.split('**');
+      return parts.map((part, index) => {
+         if (index % 2 === 1) {
+            // This is text between ** markers
+            return (
+               <Typography
+                  key={index}
+                  component="span"
+                  sx={{
+                     fontSize: { xs: '1.2rem', md: '1.35rem' },
+                     fontWeight: 700,
+                     color: 'var(--primary-blue)',
+                     fontFamily: 'Helvetica Neue, Inter, sans-serif'
+                  }}
+               >
+                  {part}
+               </Typography>
+            );
+         }
+         // Regular text
+         return part;
+      });
+   };
+
    const containerVariants = {
       hidden: { opacity: 0 },
       visible: {
@@ -149,8 +175,7 @@ export default function Home({ innerRef }) {
                               letterSpacing: '0.01em'
                            }}
                         >
-                           I'm a backend-focused software engineer with 6 years of experience building scalable, 
-                           distributed systems. Currently working at Rocket Software. Let's build something impactful.
+                           {parseTextWithBold("I'm a backend-focused software engineer with **6+ years** of experience building **scalable, distributed systems**. Currently working at Rocket Software. Let's build something impactful.")}
                         </Typography>
                      </motion.div>
 
@@ -274,7 +299,7 @@ export default function Home({ innerRef }) {
                                  />
                                  <Typography
                                     component="a"
-                                    href="/resume"
+                                    href="/#/resume"
                                     sx={{
                                        fontSize: '1.1rem',
                                        color: 'var(--light-gray)',
@@ -306,7 +331,7 @@ export default function Home({ innerRef }) {
                                  />
                                  <Typography
                                     component="a"
-                                    href="/coverletter"
+                                    href="/#/resume"
                                     sx={{
                                        fontSize: '1.1rem',
                                        color: 'var(--light-gray)',
@@ -353,7 +378,6 @@ export default function Home({ innerRef }) {
                                  cursor: 'pointer',
                                  transition: 'all 0.3s ease',
                                  '&:hover': {
-                                    background: 'var(--primary-blue)',
                                     transform: 'translateY(-2px)',
                                     boxShadow: '0 4px 12px rgba(0, 155, 183, 0.3)'
                                  }
@@ -386,7 +410,6 @@ export default function Home({ innerRef }) {
                                  cursor: 'pointer',
                                  transition: 'all 0.3s ease',
                                  '&:hover': {
-                                    background: 'var(--primary-blue)',
                                     transform: 'translateY(-2px)',
                                     boxShadow: '0 4px 12px rgba(0, 155, 183, 0.3)'
                                  }
