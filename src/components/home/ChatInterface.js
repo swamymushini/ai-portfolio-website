@@ -86,9 +86,10 @@ export default function ChatInterface() {
                background: 'rgba(0, 155, 183, 0.2)',
                border: '1px solid rgba(0, 155, 183, 0.3)',
                color: 'var(--light-gray)',
-               fontSize: '0.95rem',
+               fontSize: '1.05rem',
                lineHeight: 1.4,
-               fontFamily: 'Helvetica Neue, Inter, sans-serif',
+               fontWeight: 500,
+               fontFamily: 'Inter, Helvetica Neue, sans-serif',
                display: 'flex',
                alignItems: 'center',
                gap: 1
@@ -124,7 +125,7 @@ export default function ChatInterface() {
                fontSize: '0.8rem',
                color: 'var(--medium-gray)',
                mt: 0.5,
-               fontFamily: 'Helvetica Neue, Inter, sans-serif'
+               fontFamily: 'Inter, Helvetica Neue, sans-serif'
             }}
          >
             {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -261,7 +262,7 @@ export default function ChatInterface() {
                      fontSize: '1.5rem',
                      fontWeight: 'bold',
                      lineHeight: 1,
-                     fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                     fontFamily: 'Inter, Helvetica Neue, sans-serif',
                      filter: !chatInput.trim() || isLoading 
                         ? 'none' 
                         : 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2))'
@@ -283,7 +284,7 @@ export default function ChatInterface() {
                sx={{
                   fontSize: '0.9rem',
                   color: 'var(--medium-gray)',
-                  fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                  fontFamily: 'Inter, Helvetica Neue, sans-serif',
                   marginTop: '-0.8rem'
                }}
             >
@@ -296,7 +297,7 @@ export default function ChatInterface() {
                   sx={{
                      color: 'var(--primary-blue)',
                      textDecoration: 'underline',
-                     fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                     fontFamily: 'Inter, Helvetica Neue, sans-serif',
                      transition: 'all 0.2s ease',
                      '&:hover': {
                         color: '#FE4A49'

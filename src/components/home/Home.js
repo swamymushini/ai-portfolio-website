@@ -21,10 +21,10 @@ export default function Home({ innerRef }) {
                   key={index}
                   component="span"
                   sx={{
-                     fontSize: { xs: '1.2rem', md: '1.35rem' },
-                     fontWeight: 700,
+                     fontSize: { xs: '1.4rem', md: '1.55rem' },
+                     fontWeight: 800,
                      color: 'var(--primary-blue)',
-                     fontFamily: 'Helvetica Neue, Inter, sans-serif'
+                     fontFamily: 'Inter, Helvetica Neue, sans-serif'
                   }}
                >
                   {part}
@@ -137,7 +137,7 @@ export default function Home({ innerRef }) {
                               color: 'var(--light-gray)',
                               letterSpacing: '-0.02em',
                               lineHeight: 0.9,
-                              fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                              fontFamily: 'Inter, Helvetica Neue, sans-serif',
                               textTransform: 'uppercase',
                               whiteSpace: 'nowrap'
                            }}
@@ -153,7 +153,7 @@ export default function Home({ innerRef }) {
                               color: 'var(--light-gray)',
                               letterSpacing: '-0.01em',
                               lineHeight: 1,
-                              fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                              fontFamily: 'Inter, Helvetica Neue, sans-serif',
                               textTransform: 'uppercase'
                            }}
                         >
@@ -166,12 +166,12 @@ export default function Home({ innerRef }) {
                         <Typography
                            variant="body1"
                            sx={{
-                              fontSize: { xs: '1.2rem', md: '1.35rem' },
+                              fontSize: { xs: '1.4rem', md: '1.55rem' },
                               lineHeight: 1.6,
                               color: 'var(--medium-gray)',
                               mb: 3,
-                              fontWeight: 300,
-                              fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                              fontWeight: 400,
+                              fontFamily: 'Inter, Helvetica Neue, sans-serif',
                               letterSpacing: '0.01em'
                            }}
                         >
@@ -190,7 +190,7 @@ export default function Home({ innerRef }) {
                               color: 'var(--primary-blue)',
                               letterSpacing: '0.1em',
                               textTransform: 'uppercase',
-                              fontFamily: 'Helvetica Neue, Inter, sans-serif'
+                              fontFamily: 'Inter, Helvetica Neue, sans-serif'
                            }}
                         >
                            Senior Software Engineer
@@ -225,11 +225,11 @@ export default function Home({ innerRef }) {
                                  component="a"
                                  href="mailto:swamymushini@gmail.com"
                                  sx={{
-                                    fontSize: '1.1rem',
+                                    fontSize: '1.2rem',
                                     color: 'var(--light-gray)',
                                     textDecoration: 'none',
-                                    fontWeight: 400,
-                                    fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                                    fontWeight: 500,
+                                    fontFamily: 'Inter, Helvetica Neue, sans-serif',
                                     transition: 'all 0.2s ease',
                                     '&:hover': {
                                        color: 'var(--primary-blue)',
@@ -259,11 +259,11 @@ export default function Home({ innerRef }) {
                                  component="a"
                                  href="tel:+919553307417"
                                  sx={{
-                                    fontSize: '1.1rem',
+                                    fontSize: '1.2rem',
                                     color: 'var(--light-gray)',
                                     textDecoration: 'none',
-                                    fontWeight: 400,
-                                    fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                                    fontWeight: 500,
+                                    fontFamily: 'Inter, Helvetica Neue, sans-serif',
                                     transition: 'all 0.2s ease',
                                     '&:hover': {
                                        color: 'var(--primary-blue)',
@@ -301,11 +301,11 @@ export default function Home({ innerRef }) {
                                     component="a"
                                     href="/#/resume"
                                     sx={{
-                                       fontSize: '1.1rem',
+                                       fontSize: '1.2rem',
                                        color: 'var(--light-gray)',
                                        textDecoration: 'underline',
-                                       fontWeight: 400,
-                                       fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                                       fontWeight: 500,
+                                       fontFamily: 'Inter, Helvetica Neue, sans-serif',
                                        transition: 'all 0.2s ease',
                                        '&:hover': {
                                           color: 'var(--primary-blue)'
@@ -333,11 +333,11 @@ export default function Home({ innerRef }) {
                                     component="a"
                                     href="/#/resume"
                                     sx={{
-                                       fontSize: '1.1rem',
+                                       fontSize: '1.2rem',
                                        color: 'var(--light-gray)',
                                        textDecoration: 'underline',
-                                       fontWeight: 400,
-                                       fontFamily: 'Helvetica Neue, Inter, sans-serif',
+                                       fontWeight: 500,
+                                       fontFamily: 'Inter, Helvetica Neue, sans-serif',
                                        transition: 'all 0.2s ease',
                                        '&:hover': {
                                           color: 'var(--primary-blue)'

@@ -42,9 +42,10 @@ export default function ChatMessage({ message }) {
                   ? '1px solid rgba(254, 74, 73, 0.3)' 
                   : '1px solid rgba(0, 155, 183, 0.3)',
                color: 'var(--light-gray)',
-               fontSize: '1rem',
+               fontSize: '1.1rem',
                lineHeight: 1.4,
-               fontFamily: 'Helvetica Neue, Inter, sans-serif'
+               fontWeight: 500,
+               fontFamily: 'Inter, Helvetica Neue, sans-serif'
             }}
          >
             {message.text}
@@ -60,9 +61,10 @@ export default function ChatMessage({ message }) {
          >
             <Typography
                sx={{
-                  fontSize: '0.85rem',
+                  fontSize: '0.9rem',
                   color: 'var(--medium-gray)',
-                  fontFamily: 'Helvetica Neue, Inter, sans-serif'
+                  fontWeight: 500,
+                  fontFamily: 'Inter, Helvetica Neue, sans-serif'
                }}
             >
                {formatTime(message.timestamp)}
