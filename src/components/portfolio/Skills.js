@@ -98,7 +98,9 @@ const Skills = ({ innerRef }) => {
                     <Box
                       display={'flex'}
                       flexWrap={'wrap'}
-                      gap={2}
+                      gap={1}
+                      justifyContent={'flex-start'}
+                      alignItems={'center'}
                     >
                       {skills.map((skill, skillIndex) => (
                         <motion.div 
@@ -111,8 +113,9 @@ const Skills = ({ innerRef }) => {
                             className="skill-box"
                             component={'span'}
                             sx={{
-                              mb: 2,
+                              mb: 1,
                               mx: 0,
+                              display: 'inline-block',
                             }}
                           >
                             <motion.div

@@ -1,14 +1,24 @@
-$purple: #8D53FF;
-$pink: #CA6BE6;
-$white: #f8f8f8;
-$dark: #1f1f1f;
-$red: #FF6057;
-$yellow: #FFBD2E;
-$green: #27C93F;
-$lightgray: #c9c9c9;
+// Color variables
+$dark: #1a1a1a;
+$white: #ffffff;
+$pink: #ff6b9d;
+$green: #4ecdc4;
+$lightgray: #cccccc;
+$purple: #9b59b6;
+$red: #e74c3c;
+$yellow: #f1c40f;
 
-$transition: all 250ms ease;
-
-.shadowed {
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.4);
+// CSS Custom Properties for better browser support
+:root {
+  --dark-bg: #1a1a1a;
+  --dark-card: #2a2a2a;
+  --white: #ffffff;
+  --light-gray: #e0e0e0;
+  --medium-gray: #b0b0b0;
+  --primary-blue: #0099B7;
+  --red-primary: #FF3332;
+  --red-secondary: #FF5555;
 }
+
+// Transition variables
+$transition: all 400ms ease;

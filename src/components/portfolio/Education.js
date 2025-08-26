@@ -36,11 +36,14 @@ const EducationCard = ({ item, index }) => {
       transition={{ duration: 0.5, delay: index * 0.2 }}
     >
       <Paper
-        elevation={10}
+        elevation={0}
         sx={{
-          padding: theme.spacing(3),
-          background: `linear-gradient(135deg, ${item.color}22, ${item.color}44)`,
-          borderRadius: '20px',
+          padding: 4,
+          background: 'var(--dark-card)',
+          border: index % 2 === 0 
+            ? '1px solid rgba(254, 74, 73, 0.3)'
+            : '1px solid rgba(0, 155, 183, 0.3)',
+          borderRadius: 0,
           overflow: 'hidden',
           position: 'relative',
           height: '100%',
@@ -49,12 +52,17 @@ const EducationCard = ({ item, index }) => {
           justifyContent: 'space-between',
           transition: 'all 0.3s ease-in-out',
           '&:hover': {
-            transform: 'translateY(-10px)',
-            boxShadow: `0 20px 30px ${item.color}33`,
+            transform: 'translateY(-8px)',
+            boxShadow: index % 2 === 0
+              ? '0 12px 40px rgba(254, 74, 73, 0.3)'
+              : '0 12px 40px rgba(0, 155, 183, 0.3)',
+            border: index % 2 === 0
+              ? '1px solid rgba(254, 74, 73, 0.6)'
+              : '1px solid rgba(0, 155, 183, 0.6)'
           },
         }}
       >
-        <Box sx={{ position: 'absolute', top: 10, right: 10, color: item.color }}>
+        <Box sx={{ position: 'absolute', top: 20, right: 20, color: index % 2 === 0 ? '#FF3332' : '#0099B7' }}>
           {item.icon}
         </Box>
         <motion.div
@@ -62,34 +70,68 @@ const EducationCard = ({ item, index }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: index * 0.3 }}
         >
-          <Typography variant="h4" component="h3" gutterBottom fontWeight="bold" color={item.color} sx={{ mb: 2 }}>
+          <Typography 
+            variant="h4" 
+            component="h3" 
+            gutterBottom 
+            fontWeight="bold" 
+            sx={{ 
+              mb: 2,
+              color: index % 2 === 0 ? '#FF3332' : '#0099B7',
+              fontSize: { xs: '1.5rem', md: '2rem' },
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              fontFamily: 'Helvetica Neue, Inter, sans-serif'
+            }}
+          >
             {item.heading}
           </Typography>
         </motion.div>
-        <Typography variant="h5" component="h4" gutterBottom fontWeight="bold" color='white'>
+        <Typography 
+          variant="h5" 
+          component="h4" 
+          gutterBottom 
+          fontWeight="bold" 
+          sx={{
+            color: 'var(--light-gray)',
+            fontSize: { xs: '1.25rem', md: '1.5rem' },
+            fontFamily: 'Helvetica Neue, Inter, sans-serif'
+          }}
+        >
           {item.title}
         </Typography>
-        <Typography variant="subtitle1" color='white'>
+        <Typography 
+          variant="subtitle1" 
+          sx={{
+            color: 'var(--medium-gray)',
+            fontFamily: 'Helvetica Neue, Inter, sans-serif'
+          }}
+        >
           {item.period}
         </Typography>
-        <Typography variant="body1" sx={{ mt: 2 }} color='white'> 
+        <Typography 
+          variant="body1" 
+          sx={{ 
+            mt: 2,
+            color: 'var(--light-gray)',
+            lineHeight: 1.6,
+            fontFamily: 'Helvetica Neue, Inter, sans-serif'
+          }}
+        > 
           {item.description}
         </Typography>
-        <Typography variant="body2" sx={{ mt: 1, fontStyle: 'italic' }} color={item.color}>
+        <Typography 
+          variant="body2" 
+          sx={{ 
+            mt: 1, 
+            fontStyle: 'italic',
+            color: index % 2 === 0 ? '#FF3332' : '#0099B7',
+            fontWeight: 500,
+            fontFamily: 'Helvetica Neue, Inter, sans-serif'
+          }}
+        >
           {item.additionalInfo}
         </Typography>
-        <Box
-          sx={{
-            position: 'absolute',
-            bottom: -30,
-            right: -30,
-            width: 100,
-            height: 100,
-            borderRadius: '50%',
-            backgroundColor: `${item.color}22`,
-            zIndex: 0,
-          }}
-        />
       </Paper>
     </motion.div>
   );
@@ -108,8 +150,9 @@ const Education = ({innerRef}) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        background: 'transparent',
-        padding: theme.spacing(3),
+        background: 'var(--dark-bg)',
+        padding: { xs: 3, md: 6 },
+        color: 'var(--light-gray)'
       }}
     >
       <Typography
@@ -119,13 +162,14 @@ const Education = ({innerRef}) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         sx={{
-          mb: 5,
-          background: info.gradient,
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
+          mb: 8,
+          color: 'var(--light-gray)',
           textAlign: 'center',
           textTransform: 'uppercase',
-          fontWeight: 'bold'
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
+          fontFamily: 'Helvetica Neue, Inter, sans-serif'
         }}
       >
         Education

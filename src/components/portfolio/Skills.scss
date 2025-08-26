@@ -1,10 +1,10 @@
 .skill-box {
   position: relative;
   background: var(--dark-card);
-  border: 2px solid var(--primary-blue);
+  border: 1px solid rgba(254, 74, 73, 0.3);
   border-radius: 0;
   padding: 12px 20px;
-  margin: 4px;
+  margin: 6px;
   color: var(--light-gray);
   font-size: 0.875rem;
   font-weight: 500;
@@ -13,12 +13,16 @@
   cursor: pointer;
   overflow: hidden;
   text-transform: uppercase;
+  display: inline-block;
+  min-width: 120px;
+  text-align: center;
 
   &:hover {
-    background: var(--primary-blue);
+    background: linear-gradient(135deg, #FF3332 0%, #FF5555 50%, #FF3332 100%);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 155, 183, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 51, 50, 0.4);
+    border: 1px solid rgba(255, 51, 50, 0.6);
   }
 
   .skill-fill {
@@ -26,8 +30,8 @@
     top: 0;
     left: 0;
     height: 100%;
-    background: var(--primary-blue);
-    opacity: 0.2;
+    background: linear-gradient(135deg, #FF3332 0%, #FF5555 50%, #FF3332 100%);
+    opacity: 0.15;
     transition: width 0.8s ease;
     z-index: 0;
   }

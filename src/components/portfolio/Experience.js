@@ -104,7 +104,7 @@ const Experience = ({ innerRef }) => {
               >
                 <Typography
                   sx={{
-                    backgroundColor: 'var(--primary-blue)',
+                    background: 'linear-gradient(135deg, #FF3332 0%, #FF5555 50%, #FF3332 100%)',
                     color: 'var(--white)',
                     padding: '8px 16px',
                     display: 'inline-block',
@@ -123,13 +123,14 @@ const Experience = ({ innerRef }) => {
               <Box sx={{ flex: 1 }}>
                 <Box
                   sx={{
-                    border: '2px solid var(--primary-blue)',
+                    border: '1px solid rgba(254, 74, 73, 0.3)',
                     padding: 4,
                     background: 'var(--dark-card)',
                     transition: 'all 0.3s ease',
                     '&:hover': {
                       transform: 'translateY(-4px)',
-                      boxShadow: '0 8px 30px rgba(0, 155, 183, 0.2)'
+                      boxShadow: '0 8px 30px rgba(255, 51, 50, 0.4)',
+                      border: '1px solid rgba(255, 51, 50, 0.6)'
                     }
                   }}
                 >
@@ -152,7 +153,10 @@ const Experience = ({ innerRef }) => {
                     sx={{ 
                       mb: 2, 
                       fontSize: '1.125rem', 
-                      color: 'var(--primary-blue)', 
+                      background: 'linear-gradient(135deg, #FF3332 0%, #FF5555 50%, #FF3332 100%)',
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
                       fontWeight: 500,
                       fontFamily: 'Helvetica Neue, Inter, sans-serif'
                     }}
@@ -189,7 +193,7 @@ const Experience = ({ innerRef }) => {
                         fontFamily: 'Helvetica Neue, Inter, sans-serif'
                       }}
                     >
-                      <span style={{ marginRight: '12px', color: 'var(--primary-blue)', fontWeight: 700 }}>•</span> 
+                      <span style={{ marginRight: '12px', color: '#FF3332', fontWeight: 700 }}>•</span> 
                       {resp}
                     </Typography>
                   ))}
